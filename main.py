@@ -44,11 +44,11 @@ class MyCalculator:
         self.button.place(x = 150, y = 330)
         self.button = tk.Button(self.root, text="+", height=4, width=8)
         self.button.place(x = 220, y = 330)
-        self.button = tk.Button(self.root, text="ENTER", height=4, width=18)
+        self.button = tk.Button(self.root, text="0", height=4, width=18)
         self.button.place(x = 10, y = 410)
-        self.button = tk.Button(self.root, text=".", height=4, width=8)
+        self.button = tk.Button(self.root, text="=", height=4, width=8)
         self.button.place(x = 220, y = 410),
-        self.button = tk.Button(self.root, text="0", height=4, width=8)
+        self.button = tk.Button(self.root, text=".", height=4, width=8)
         self.button.place(x = 150, y = 410)
         
 
