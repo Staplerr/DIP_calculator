@@ -8,7 +8,7 @@ class MyCalculator:
         self.root.geometry("300x500")
         self.root.title("My Calculator")
 
-        self.label = tk.Label(self.root, text="لا، أتوسل إليك.", font=('Arial', 18))
+        self.label = tk.Label(self.root, text="Calculator", font=('Arial', 18))
         self.label.pack()
         
         self.button = {}
@@ -53,7 +53,17 @@ class MyCalculator:
         self.button = tk.Button(self.root, text=".", height=4, width=8)
         self.button.place(x = 150, y = 410)
         
+      
+        self.button.bind('<Button-1>', self.trigger_event)
 
         self.root.mainloop()
-
+        
+        #function
+    def trigger_event(self,event):
+        print(event)
+        self.title = "Test"
+        self.root.title(self.title)
+        self.label_text("DIP 02")
+        self.label.pack()
+        
 MyCalculator()
