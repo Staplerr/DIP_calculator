@@ -2,8 +2,34 @@ import tkinter as tk
 
 class MyCalculator:
     A = ""
+    B = ""
+    op = ""
     def Button1(self,event):
         self.A = self.A + "1"
+        self.label_text.set(self.A)
+        self.label.pack()
+    def Buttonplus(self,event):
+        self.op="+"
+        self.B=self.A
+        self.A=""
+        self.label_text.set(self.A)
+        self.label.pack()
+    def Buttonsubtract(self,event):
+        self.op="-"
+        self.B=self.A
+        self.A=""
+        self.label_text.set(self.A)
+        self.label.pack()
+    def Buttonmultiply(self,event):
+        self.op="×"
+        self.B=self.A
+        self.A=""
+        self.label_text.set(self.A)
+        self.label.pack()
+    def Buttondivide(self,event):
+        self.op="÷"
+        self.B=self.A
+        self.A=""
         self.label_text.set(self.A)
         self.label.pack()
 
