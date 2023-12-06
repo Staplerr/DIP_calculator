@@ -4,72 +4,87 @@ class MyCalculator:
     A = "0"
     B = "0"
     op = ""
+    ev = False
     Dotpressed = False
     def Button1(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "1"
         self.label_text.set(self.A)
         self.label.pack()
-    def Buttonplus(self,event):
+    def Buttonplus(self):
+        self.eval(0)
         self.op="+"
         self.B=self.A
         self.A=""
-        self.label_text.set(self.A)
-        self.label.pack()
     def Buttonsubtract(self,event):
+        self.eval(0)
         self.op="-"
         self.B=self.A
         self.A=""
-        self.label_text.set(self.A)
-        self.label.pack()
     def Buttonmultiply(self,event):
+        self.eval(0)
         self.op="×"
         self.B=self.A
         self.A=""
-        self.label_text.set(self.A)
-        self.label.pack()
     def Buttondivide(self,event):
+        self.eval(0)
         self.op="÷"
         self.B=self.A
         self.A=""
-        self.label_text.set(self.A)
-        self.label.pack()
 
     def Button2(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "2"
         self.label_text.set(self.A)
         self.label.pack()
 
     def Button3(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "3"
         self.label_text.set(self.A)
         self.label.pack()
 
     def Button4(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "4"
         self.label_text.set(self.A)
         self.label.pack()
 
     def Button5(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "5"
         self.label_text.set(self.A)
         self.label.pack()
 
     def Button6(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "6"
         self.label_text.set(self.A)
         self.label.pack()
 
     def Button7(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "7"
         self.label_text.set(self.A)
         self.label.pack()
 
     def Button8(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "8"
         self.label_text.set(self.A)
         self.label.pack()
 
     def Button9(self,event):
+        if self.A == "0":
+            self.A = ""
         self.A = self.A + "9"
         self.label_text.set(self.A)
         self.label.pack()
@@ -95,6 +110,22 @@ class MyCalculator:
         self.A = str( -float(self.A))
         self.label_text.set(self.A)
         self.label.pack()
+    def eval(self,event):
+        if self.ev == False and not event == 0:
+            #swap ab
+            self.A,self.B = self.B,self.A
+            self.ev = True
+        if self.op == "+":
+            self.A = str(float(self.A) + float(self.B))
+        if self.op == "-":
+            self.A = str(float(self.A) - float(self.B))
+        if self.op == "×":
+            self.A = str(float(self.A) * float(self.B))
+        if self.op == "÷":
+            self.A = str(float(self.A) / float(self.B))
+        self.label_text.set(self.A)
+        self.label.pack()
+        
     def __init__(self):
 
         self.root = tk.Tk()
@@ -163,6 +194,7 @@ class MyCalculator:
         self.button.place(x = 80, y = 410)
         self.button = tk.Button(self.root, text="=", height=4, width=8)
         self.button.place(x = 220, y = 410),
+        self.button.bind('<Button-1>',self.eval)
         self.button = tk.Button(self.root, text=".", height=4, width=8)
         self.button.place(x = 150, y = 410)
         
