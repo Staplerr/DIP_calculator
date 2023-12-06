@@ -2,6 +2,7 @@ import tkinter as tk
 
 class MyCalculator:
     A = ""
+    Dotpressed = False
     def Button1(self,event):
         self.A = self.A + "1"
         self.label_text.set(self.A)
@@ -52,6 +53,14 @@ class MyCalculator:
         self.label_text.set(self.A)
         self.label.pack()
 
+
+    def ButtonDot(self,event):
+        if self.Dotpressed == True:
+            return
+        self.Dotpressed = True
+        self.A = self.A + "."
+        self.label_text.set(self.A)
+        self.label.pack()
 
     def __init__(self):
 
@@ -120,7 +129,7 @@ class MyCalculator:
         self.button.place(x = 150, y = 410)
         
       
-        self.button.bind('<Button-1>', self.trigger_event)
+        self.button.bind('<Button-1>', self.ButtonDot)
 
         self.root.mainloop()
         
