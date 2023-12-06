@@ -1,8 +1,8 @@
 import tkinter as tk
 
 class MyCalculator:
-    A = ""
-    B = ""
+    A = "0"
+    B = "0"
     op = ""
     Dotpressed = False
     def Button1(self,event):
@@ -75,12 +75,15 @@ class MyCalculator:
         self.label.pack()
 
     def Button0(self,event):
+        if self.A == "0":
+            return
         self.A = self.A + "0"
         self.label_text.set(self.A)
         self.label.pack()
 
 
     def ButtonDot(self,event):
+        
         if self.Dotpressed == True:
             return
         self.Dotpressed = True
