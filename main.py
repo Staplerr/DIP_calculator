@@ -17,7 +17,7 @@ class MyCalculator:
         self.button.place(x = 80, y = 90)
         self.button = tk.Button(self.root, text="%", height=4, width=8)
         self.button.place(x = 150, y = 90)
-        self.button = tk.Button(self.root, text="Click here", height=4, width=8)
+        self.button = tk.Button(self.root, text="÷", height=4, width=8)
         self.button.place(x = 220, y = 90)
         self.button = tk.Button(self.root, text="7", height=4, width=8)
         self.button.place(x = 10, y = 170)
@@ -25,7 +25,7 @@ class MyCalculator:
         self.button.place(x = 80, y = 170)
         self.button = tk.Button(self.root, text="9", height=4, width=8)
         self.button.place(x = 150, y = 170)
-        self.button = tk.Button(self.root, text="+", height=4, width=8)
+        self.button = tk.Button(self.root, text="×", height=4, width=8)
         self.button.place(x = 220, y = 170)
         self.button = tk.Button(self.root, text="4", height=4, width=8)
         self.button.place(x = 10, y = 250)
@@ -33,7 +33,7 @@ class MyCalculator:
         self.button.place(x = 80, y = 250)
         self.button = tk.Button(self.root, text="6", height=4, width=8)
         self.button.place(x = 150, y = 250)
-        self.button = tk.Button(self.root, text="+", height=4, width=8)
+        self.button = tk.Button(self.root, text="-", height=4, width=8)
         self.button.place(x = 220, y = 250)
         self.button = tk.Button(self.root, text="1", height=4, width=8)
         self.button.place(x = 10, y = 330)
@@ -41,13 +41,13 @@ class MyCalculator:
         self.button.place(x = 80, y = 330)
         self.button = tk.Button(self.root, text="3", height=4, width=8)
         self.button.place(x = 150, y = 330),
-        self.button = tk.Button(self.root, text="Click here", height=4, width=8)
+        self.button = tk.Button(self.root, text="+", height=4, width=8)
         self.button.place(x = 220, y = 330),
         self.button = tk.Button(self.root, text="ENTER", height=4, width=18)
         self.button.place(x = 10, y = 410),
-        self.button = tk.Button(self.root, text=".", height=4, width=8)
+        self.button = tk.Button(self.root, text="=", height=4, width=8)
         self.button.place(x = 220, y = 410),
-        self.button = tk.Button(self.root, text="Click here", height=4, width=8)
+        self.button = tk.Button(self.root, text=".", height=4, width=8)
         self.button.place(x = 150, y = 410)
         
 
