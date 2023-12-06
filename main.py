@@ -62,6 +62,10 @@ class MyCalculator:
         self.label_text.set(self.A)
         self.label.pack()
 
+    def Buttoninvert(self,event):
+        self.A = str( -float(self.A))
+        self.label_text.set(self.A)
+        self.label.pack()
     def __init__(self):
 
         self.root = tk.Tk()
@@ -79,6 +83,7 @@ class MyCalculator:
         self.button = tk.Button(self.root, text="AC", height=4, width=8)
         self.button.place(x = 10, y = 90)
         self.button = tk.Button(self.root, text="+/-", height=4, width=8)
+        self.button.bind('<Button-1>',self.Buttoninvert)
         self.button.place(x = 80, y = 90)
         self.button = tk.Button(self.root, text="%", height=4, width=8)
         self.button.place(x = 150, y = 90)
