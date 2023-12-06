@@ -12,7 +12,7 @@ class MyCalculator:
         self.A = self.A + "1"
         self.label_text.set(self.A)
         self.label.pack()
-    def Buttonplus(self):
+    def Buttonplus(self,event):
         self.eval(0)
         self.op="+"
         self.B=self.A
@@ -32,7 +32,18 @@ class MyCalculator:
         self.op="÷"
         self.B=self.A
         self.A=""
-
+    def Buttonpercent(self,event):
+        self.op="%"
+        self.B=int(self.A)/100
+        self.label_text.set(str(self.B))
+        self.label.pack()
+    def Buttonclear(self,event):
+        self.op="AC"
+        self.A="0"
+        self.B=self.A
+        self.label_text.set(str(self.B))
+        self.label.pack()
+        self.ev
     def Button2(self,event):
         if self.A == "0":
             self.A = ""
@@ -141,11 +152,13 @@ class MyCalculator:
         
         self.button = {}
         self.button = tk.Button(self.root, text="AC", height=4, width=8)
+        self.button.bind('<Button-1>',self.Buttonclear)
         self.button.place(x = 10, y = 90)
         self.button = tk.Button(self.root, text="+/-", height=4, width=8)
         self.button.bind('<Button-1>',self.Buttoninvert)
         self.button.place(x = 80, y = 90)
         self.button = tk.Button(self.root, text="%", height=4, width=8)
+        self.button.bind('<Button-1>',self.Buttonpercent)
         self.button.place(x = 150, y = 90)
         self.button = tk.Button(self.root, text="÷", height=4, width=8)
         self.button.place(x = 220, y = 90)
