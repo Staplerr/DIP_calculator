@@ -33,6 +33,12 @@ class MyCalculator:
         self.A=""
         self.label_text.set(self.A)
         self.label.pack()
+    def Buttonpercent(self,event):
+        self.op="%"
+        self.B=self.A
+        self.A=""
+        self.label_text.set(self.A)
+        self.label.pack()
 
     def Button2(self,event):
         self.A = self.A + "2"
@@ -115,6 +121,7 @@ class MyCalculator:
         self.button.bind('<Button-1>',self.Buttoninvert)
         self.button.place(x = 80, y = 90)
         self.button = tk.Button(self.root, text="%", height=4, width=8)
+        self.button.bind('<Button-1>',self.Buttonpercent)
         self.button.place(x = 150, y = 90)
         self.button = tk.Button(self.root, text="÷", height=4, width=8)
         self.button.place(x = 220, y = 90)
