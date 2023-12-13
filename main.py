@@ -33,9 +33,11 @@ class MyCalculator:
         self.B=self.A
         self.A=""
     def Buttonpercent(self,event):
-        self.op="%"
-        self.B=int(self.A)/100
-        self.label_text.set(str(self.B))
+        if self.B != "" and (self.op == "+" or self.op == "-"):
+            self.A=str(round(float(self.B)*(float(self.A)/100),6))
+        else:
+            self.A=str(round(float(self.A)/100,6))
+        self.label_text.set(str(self.A))
         self.label.pack()
     def Buttonclear(self,event):
         self.op="AC"
@@ -43,7 +45,7 @@ class MyCalculator:
         self.B=self.A
         self.label_text.set(str(self.B))
         self.label.pack()
-        self.ev
+        self.ev = False
     def Button2(self,event):
         if self.A == "0":
             self.A = ""
@@ -133,7 +135,7 @@ class MyCalculator:
         if self.op == "×":
             self.A = str(float(self.A) * float(self.B))
         if self.op == "÷":
-            self.A = str(float(self.A) / float(self.B))
+            self.A = str(round(float(self.A) / float(self.B),6))
         self.label_text.set(self.A)
         self.label.pack()
         
