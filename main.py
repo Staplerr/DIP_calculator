@@ -13,22 +13,18 @@ class MyCalculator:
         self.label_text.set(self.A)
         self.label.pack()
     def Buttonplus(self,event):
-        self.eval(0)
         self.op="+"
         self.B=self.A
         self.A=""
     def Buttonsubtract(self,event):
-        self.eval(0)
         self.op="-"
         self.B=self.A
         self.A=""
     def Buttonmultiply(self,event):
-        self.eval(0)
         self.op="×"
         self.B=self.A
         self.A=""
     def Buttondivide(self,event):
-        self.eval(0)
         self.op="÷"
         self.B=self.A
         self.A=""
@@ -123,21 +119,7 @@ class MyCalculator:
         self.A = str( -float(self.A))
         self.label_text.set(self.A)
         self.label.pack()
-    def eval(self,event):
-        if self.ev == False and not event == 0:
-            #swap ab
-            self.A,self.B = self.B,self.A
-            self.ev = True
-        if self.op == "+":
-            self.A = str(float(self.A) + float(self.B))
-        if self.op == "-":
-            self.A = str(float(self.A) - float(self.B))
-        if self.op == "×":
-            self.A = str(float(self.A) * float(self.B))
-        if self.op == "÷":
-            self.A = str(round(float(self.A) / float(self.B),6))
-        self.label_text.set(self.A)
-        self.label.pack()
+    
         
     def __init__(self):
 
