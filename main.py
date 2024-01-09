@@ -6,6 +6,15 @@ class MyCalculator:
     op = ""
     ev = False
     Dotpressed = False
+    
+    def calculate(self,event):
+        if self.ev == False and not event == 0:#if the first time running eval, setup variables properly
+            #swap ab
+            self.A,self.B = self.B,self.A
+            #set variable to true to prevent from running again when pressing enter
+            self.ev = True
+            
+            
     def Button1(self,event):
         if self.A == "0":
             self.A = ""
