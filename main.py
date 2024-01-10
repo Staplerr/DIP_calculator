@@ -13,13 +13,15 @@ class MyCalculator:
             self.A,self.B = self.B,self.A
             #set variable to true to prevent from running again when pressing enter
             self.ev = True
-            
+        if self.op == "+":
+            self.A = str(float(self.A) + float(self.B))    
             
     def Button1(self,event):
         if self.A == "0":
             self.A = ""
         self.A = self.A + "1"
         self.label_text.set(self.A)
+        
         self.label.pack()
     def Buttonplus(self,event):
         self.op="+"
@@ -200,7 +202,7 @@ class MyCalculator:
         self.button.place(x = 80, y = 410)
         self.button = tk.Button(self.root, text="=", height=4, width=8)
         self.button.place(x = 220, y = 410),
-        self.button.bind('<Button-1>',self.eval)
+        self.button.bind('<Button-1>',self.calculate)
         self.button = tk.Button(self.root, text=".", height=4, width=8)
         self.button.place(x = 150, y = 410)
         
