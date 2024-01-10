@@ -15,6 +15,8 @@ class MyCalculator:
             self.ev = True
         if self.op == "+":
             self.A = str(float(self.A) + float(self.B))    
+        if self.op == "-":
+            self.A = str(float(self.A) - float(self.B))
         self.label_text.set(self.A)
         self.label.pack()
     def Button1(self,event):
@@ -30,6 +32,7 @@ class MyCalculator:
         self.B=self.A
         self.A=""
     def Buttonsubtract(self,event):
+        self.calculate(0)
         self.op="-"
         self.B=self.A
         self.A=""
