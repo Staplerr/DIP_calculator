@@ -17,6 +17,8 @@ class MyCalculator:
             self.A = str(float(self.A) + float(self.B))    
         if self.op == "-":
             self.A = str(float(self.A) - float(self.B))
+        if self.op == "×":
+            self.A = str(float(self.A) * float(self.B))
         self.label_text.set(self.A)
         self.label.pack()
     def Button1(self,event):
@@ -37,9 +39,9 @@ class MyCalculator:
         self.B=self.A
         self.A=""
     def Buttonmultiply(self,event):
-        self.op="×"
-        self.B=self.A
-        self.A=""
+        self.op = "×"
+        self.B = self.A
+        self.A = ""
     def Buttondivide(self,event):
         self.op="÷"
         self.B=self.A
