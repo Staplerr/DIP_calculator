@@ -15,7 +15,8 @@ class MyCalculator:
             self.ev = True
         if self.op == "+":
             self.A = str(float(self.A) + float(self.B))    
-            
+        self.label_text.set(self.A)
+        self.label.pack()
     def Button1(self,event):
         if self.A == "0":
             self.A = ""
@@ -24,6 +25,7 @@ class MyCalculator:
         
         self.label.pack()
     def Buttonplus(self,event):
+        self.calculate(0)
         self.op="+"
         self.B=self.A
         self.A=""
